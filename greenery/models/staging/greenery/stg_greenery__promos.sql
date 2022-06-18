@@ -12,7 +12,7 @@ WITH promos_source AS (
 , lower_upper AS (
   SELECT 
     LOWER(promo_id) AS promo_id
-    , discount
+    , discount as pct_discount
     , UPPER(status) AS status
   FROM promos_source
 )

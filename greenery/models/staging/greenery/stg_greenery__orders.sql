@@ -14,7 +14,7 @@ WITH orders_source AS (
     order_id
     , user_id
     , LOWER(promo_id) as promo_id
-    , address_id
+    , address_id as shipping_address_id
     , created_at AS created_at_utc
     , order_cost AS order_cost_usd
     , shipping_cost AS shipping_cost_usd
