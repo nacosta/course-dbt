@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: fct_user_order
+    description: Information about user orders (number of orders, avg spent,...)
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique 
+  
+  - name: int_user_last_interaction
+    description: Last user interaction / is_active flag
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique 
+
+  - name: int_user_last_order
+    description: Information about the user's last order
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique 

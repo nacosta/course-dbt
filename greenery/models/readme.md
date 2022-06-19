@@ -1,3 +1,5 @@
+# WEEK 1
+
 -- How many users do we have?
 -- Answer: 130
 ```
@@ -94,3 +96,23 @@ SELECT
 FROM count_sessions_hours
 ;
 ```
+
+# WEEK 2
+-- Answer1: 0.798 of customers repeats after making a purchase
+```
+WITH orders_per_user AS (
+  SELECT 
+    user_id
+    , count(*) AS n_orders
+  FROM dbt_neftali_a.stg_greenery__orders
+  GROUP BY user_id
+)
+SELECT 
+  SUM(CASE WHEN n_orders > 1 THEN 1 ELSE 0 END)::FLOAT / COUNT(*) AS repeat_rate
+FROM orders_per_user
+```
+
+-- Answer2: 
+* Customers who has made a purchase have 80% chances to repeat
+* Customers who connected recently to the site 
+* Customers who visited products with high conversion rate

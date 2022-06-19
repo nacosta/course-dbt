@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Product attributes    
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique 
+  
+  - name: dim_users
+    description: User attributes (geography, activity)
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique 
+
+  - name: int_orders_summed
+    description: Number of items and products per order
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique 
+
+  - name: int_orders
+    description: Order information (order calculations)
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique 
+
+  - name: orders_fact
+    description: Orders information (includes promotions, shipping, discounts)
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique 
