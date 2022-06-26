@@ -33,10 +33,26 @@ models:
           - not_null
           - unique 
 
-  - name: orders_fact
+  - name: int_order_items
+    description: Order items information
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique 
+
+  - name: fct_orders
     description: Orders information (includes promotions, shipping, discounts)
     columns:
       - name: order_id
+        tests:
+          - not_null
+          - unique 
+
+  - name: fct_sessions
+    description: Sessions information
+    columns:
+      - name: session_id
         tests:
           - not_null
           - unique 

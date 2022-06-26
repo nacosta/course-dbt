@@ -11,6 +11,7 @@
 SELECT
       orders.order_id
     , orders.user_id
+    , events.session_id
     , promos.pct_discount
     , orders.shipping_address_id
     , addresses.zip_code
@@ -27,6 +28,8 @@ SELECT
     , EXTRACT(EPOCH FROM orders.estimated_delivery_at_utc - orders.delivered_at_utc) / 86400 < 0 AS is_delayed
 
 FROM {{ ref('stg_greenery__orders') }} AS orders
+LEFT JOIN {{ ref("stg_greenery__events") }} AS events
+  ON orders.order_id = events.order_id AND event_type = 'CHECKOUT'
 LEFT JOIN {{ ref('stg_greenery__promos') }} AS promos
   ON orders.promo_id = promos.promo_id
 LEFT JOIN {{ ref('stg_greenery__addresses')}} AS addresses

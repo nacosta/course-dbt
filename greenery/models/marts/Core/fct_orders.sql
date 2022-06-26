@@ -7,6 +7,7 @@
 
 SELECT
       orders.order_id
+    , orders.session_id
     , orders.user_id
     , orders.zip_code
     , orders.created_at_utc
