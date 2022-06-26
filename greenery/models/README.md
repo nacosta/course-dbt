@@ -175,4 +175,13 @@ group by product_id, product_name
 order by product_conversion desc;
 ```
 
-#PART 2:
+## PART 2: Macros
+Macro [group_events](https://github.com/nacosta/course-dbt/blob/week_3/greenery/macros/group_events.sql) used [here](https://github.com/nacosta/course-dbt/blob/e4d5fadd81da96392f419c8d160b303eef099832/greenery/models/marts/Core/int_sessions.sql#L13)
+Macro [grant_usage_on_schema](https://github.com/nacosta/course-dbt/blob/week_3/greenery/macros/grant_usage_on_schema.sql) used in hooks [here](https://github.com/nacosta/course-dbt/blob/week_3/greenery/dbt_project.yml#L41)
+
+## PART 3: Hooks usage
+[Hook on-run-end](https://github.com/nacosta/course-dbt/blob/week_3/greenery/dbt_project.yml#L41)
+ uses the macro [grant_usage_on_schema](https://github.com/nacosta/course-dbt/blob/week_3/greenery/macros/grant_usage_on_schema.sql) used in hooks 
+
+## PART 4: Install a package
+https://github.com/nacosta/course-dbt/blob/week_3/greenery/packages.yml
