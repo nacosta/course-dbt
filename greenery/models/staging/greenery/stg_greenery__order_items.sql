@@ -11,7 +11,7 @@ WITH order_items_source AS (
 
 , unique_key AS (
   SELECT
-    CONCAT(order_id, product_id) AS order_item_id
+    {{ dbt_utils.surrogate_key(['order_id', 'product_id']) }} AS order_item_id
     , order_id
     , product_id
     , quantity

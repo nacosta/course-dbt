@@ -11,7 +11,7 @@ WITH products_source AS (
 
 SELECT
   product_id
-  , name
-  , price
+  , name as product_name
+  , price as price_usd
   , inventory
 FROM products_source
