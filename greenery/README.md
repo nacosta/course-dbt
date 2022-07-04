@@ -19,3 +19,4 @@ Try running the following commands:
 * [week 1](https://github.com/nacosta/course-dbt/tree/week_1/greenery/models#week-1)
 * [week 2](https://github.com/nacosta/course-dbt/tree/week_2/greenery/models#week-2)
 * [week 3](https://github.com/nacosta/course-dbt/tree/week_3/greenery/models#week-3)
+* [week 4](https://github.com/nacosta/course-dbt/tree/week_4/greenery/models#week-4)

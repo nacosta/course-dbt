@@ -185,3 +185,32 @@ Macro [grant_usage_on_schema](https://github.com/nacosta/course-dbt/blob/week_3/
 
 ## PART 4: Install a package
 https://github.com/nacosta/course-dbt/blob/week_3/greenery/packages.yml
+
+
+# WEEK 4:
+## Part 1:
+Created the Snapshot and was able to see data changes
+https://github.com/nacosta/course-dbt/tree/week_4/greenery/snapshots
+
+## Part 2:
+* How are our users moving through the product funnel?
+80.80% of users drop in the page views step (they don't progress to the next steps i the funnel)
+77.3% of users drop in the cart page (they add items in the cart but don't complete a purchase)
+
+* Which steps in the funnel have largest drop off points?
+Page views has the largest drop off
+
+
+* Implementation:
+1.) Created a snapshot to run some counting on sessions/event type. 
+This allow us to keep history of the results on a daily basis
+(as long as the snapshot is run)
+https://github.com/nacosta/course-dbt/blob/week_4/greenery/snapshots/snapshot_session_funnel.sql
+
+2.) Created a `reporting_sessions_funnel` table that performs some clean up and
+transpormations on the snapshot in point 1.
+https://github.com/nacosta/course-dbt/blob/week_4/greenery/models/reporting/reporting_sessions_funnel.sql
+
+3.) Created a exposure to link the previous table `reporting_sessions_funnel`
+to our BI tools
+https://github.com/nacosta/course-dbt/blob/week_4/greenery/models/reporting/_schema.yml#L5
