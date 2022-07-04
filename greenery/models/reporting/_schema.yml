@@ -1,0 +1,20 @@
+version: 2
+
+exposures:
+  
+  - name: sessions_funnel
+    type: dashboard
+    maturity: low
+    url: https://bi.tool/dashboards/1
+    description: |
+      Periodicity: Daily
+      Metrics: 
+        * Percentage of sessions that drop at the page_view (dont add any item in the cart)
+        * Percentage of sessions that drop at the cart (after adding products in the cart don't complete a purchase)
+    
+    depends_on:
+      - ref('reporting_sessions_funnel')
+      
+    owner:
+      name: Neftali Acosta
+      email: me@analytics.com
